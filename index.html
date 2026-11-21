@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مهزیار شریفی | برنامه‌نویس و طراح وب</title>
+<meta name="description" content="معرفی و نمونه‌کار مهزیار شریفی، برنامه‌نویس پایتون و طراح وب با HTML، CSS و جاوااسکریپت">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f1f5f6; --surface:#ffffff; --ink:#0f2a3d; --muted:#4d6475;
+  --accent:#0e7c86; --accent-ink:#ffffff; --hi:#f2b134; --line:#d3dee3;
+  --code-bg:#0f2a3d; --code-ink:#d7e6ee;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1b27; --surface:#122636; --ink:#e6eff4; --muted:#9db3c1;
+    --accent:#3cc3cf; --accent-ink:#06222a; --line:#223a4d;
+    --code-bg:#07131c; --code-ink:#d7e6ee;
+  }
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--hi);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.top{padding:18px 0;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-weight:800}
+nav a{text-decoration:none;color:var(--muted);margin-inline-start:20px;font-size:15px}
+nav a:hover{color:var(--accent)}
+
+.hero{padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.35;font-weight:800;margin-bottom:16px}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--hi) 62%)}
+.hero p{color:var(--muted);max-width:34em;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 24px;border-radius:8px;text-decoration:none;font-weight:700;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+
+.code{direction:ltr;text-align:left;background:var(--code-bg);color:var(--code-ink);border-radius:12px;padding:20px 22px;font-family:Consolas,"Courier New",monospace;font-size:14.5px;line-height:1.8;overflow-x:auto}
+.code .dots{display:flex;gap:7px;margin-bottom:14px}
+.code .dots i{width:11px;height:11px;border-radius:50%;background:#456}
+.k{color:#7fd1da}.s{color:#f2b134}.c{color:#7f98a8}
+.cursor{display:inline-block;width:8px;height:1.1em;background:var(--hi);vertical-align:middle;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:1.7rem;font-weight:800;margin-bottom:8px}
+section .lead{color:var(--muted);margin-bottom:30px;max-width:40em}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.skill h3{font-size:1.05rem;margin-bottom:6px;color:var(--accent)}
+.skill p{color:var(--muted);font-size:15px;line-height:1.8}
+
+.services{list-style:none;padding:0;display:grid;gap:14px;max-width:720px}
+.services li{background:var(--surface);border-inline-start:5px solid var(--accent);border-radius:8px;padding:16px 20px}
+.services strong{display:block}
+.services span{color:var(--muted);font-size:15px}
+
+.cert{background:var(--surface);border:1px dashed var(--accent);border-radius:10px;padding:20px 24px;max-width:720px}
+
+.contact-box{background:var(--code-bg);color:var(--code-ink);border-radius:14px;padding:36px;text-align:center}
+.contact-box h2{color:#fff}
+.contact-box p{color:#b9cdd9;margin-bottom:22px}
+.contact-box .btn.main{background:var(--hi);border-color:var(--hi);color:#1b1b1b}
+footer{padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
+
+@media(max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  nav a{margin-inline-start:12px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">مهزیار شریفی</div>
+    <nav aria-label="منوی اصلی">
+      <a href="#skills">مهارت‌ها</a>
+      <a href="#services">خدمات</a>
+      <a href="#contact">تماس</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>برنامه‌نویس و طراح وب؛ <span>کار را درست و تمیز تحویل می‌دهم</span></h1>
+      <p>سلام، من مهزیار هستم. با پایتون، HTML، CSS و جاوااسکریپت سایت و ابزار می‌سازم و کارهای اداری شما را هم با Word، Excel و PowerPoint حرفه‌ای انجام می‌دهم.</p>
+      <div class="btns">
+        <a class="btn main" href="#contact">سفارش پروژه</a>
+        <a class="btn ghost" href="#skills">مهارت‌های من</a>
+      </div>
+    </div>
+    <div class="code" aria-label="معرفی مهارت‌ها به شکل کد">
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+<pre style="font:inherit;margin:0"><span class="k">class</span> Developer:
+    name = <span class="s">"Mahziyar"</span>
+    languages = [<span class="s">"Python"</span>, <span class="s">"HTML"</span>,
+                 <span class="s">"CSS"</span>, <span class="s">"JavaScript"</span>]
+    office = [<span class="s">"Word"</span>, <span class="s">"Excel"</span>,
+              <span class="s">"PowerPoint"</span>]
+    open_to_projects = <span class="k">True</span><span class="cursor"></span></pre>
+    </div>
+  </div>
+</div>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>مهارت‌ها</h2>
+    <p class="lead">ابزارهایی که هر روز با آن‌ها کار می‌کنم.</p>
+    <div class="skills">
+      <div class="skill"><h3>Python</h3><p>نوشتن برنامه و اسکریپت برای خودکارسازی کارها و حل مسئله.</p></div>
+      <div class="skill"><h3>HTML و CSS</h3><p>ساخت صفحه‌های مرتب و واکنش‌گرا که روی موبایل و کامپیوتر درست نمایش داده می‌شوند.</p></div>
+      <div class="skill"><h3>JavaScript</h3><p>اضافه کردن تعامل به سایت، مثل فرم‌ها، منوها و ابزارهای کوچک.</p></div>
+      <div class="skill"><h3>Word، Excel، PowerPoint</h3><p>تایپ و قالب‌بندی متن، جدول و فرمول‌نویسی، ساخت اسلاید حرفه‌ای.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>چه کارهایی انجام می‌دهم</h2>
+    <p class="lead">اگر پروژه‌ای در ذهن دارید، احتمالاً یکی از این‌هاست.</p>
+    <ul class="services">
+      <li><strong>طراحی سایت معرفی و رزومه</strong><span>صفحه‌ای ساده و سریع که شما یا کسب‌وکارتان را خوب معرفی کند.</span></li>
+      <li><strong>برنامه‌نویسی با پایتون</strong><span>برنامه‌های کاربردی و اسکریپت‌های خودکار برای کارهای تکراری.</span></li>
+      <li><strong>کارهای آفیس</strong><span>فایل Word، جدول Excel و ارائه‌ی PowerPoint مرتب و آماده‌ی تحویل.</span></li>
+    </ul>
+    <div class="cert" style="margin-top:22px">
+      <strong>گواهینامه‌ی آفیس</strong><br>
+      <span style="color:var(--muted)">مهارت کار با نرم‌افزارهای آفیس را با گواهینامه ثابت کرده‌ام.</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>بیایید پروژه‌ی شما را شروع کنیم</h2>
+      <p>توضیح کوتاهی از کارتان بفرستید تا زمان و هزینه را با هم هماهنگ کنیم.</p>
+      <a class="btn main" href="mailto:mahziyarsharifi507@gmail.com">ارسال ایمیل</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© مهزیار شریفی</footer>
+
+</body>
+</html>
